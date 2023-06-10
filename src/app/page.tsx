@@ -1,112 +1,87 @@
+"use client";
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="w-full bg-slate-950 scroll-smooth h-screen overflow-x-hidden ">
+      <nav className="w-full sticky top-0 flex items-center justify-evenly bg-zinc-900 h-fit">
+        <a href="#projects">
+          <p className="text-gray-100 text-2xl font-sans py-4">Projects</p>
+        </a>
+        <a href="#skills">
+          <p className="text-gray-100 text-2xl font-sans py-4">Skills</p>
+        </a>
+        <a href="#contact">
+          <p className="text-gray-100 text-2xl font-sans py-4">Contact</p>
+        </a>
+      </nav>
+      <div className="w-full flex items-center justify-center flex-col h-5/6">
+        <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
+        <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
+      </div>
+      <div id="projects" className="w-full h-4/6 bg-gradient-to-b from-slate-950 to-blue-950 flex flex-col" style={{ paddingTop: 60 }}>
+        <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
+        {/*
+          use this if you ever use more overflow
+          <div className='flex flex-row overflow-x-scroll '>
+        */}
+        <div className='flex flex-row overflow-x-scroll overflow-y-hidden min-[712px]:justify-evenly'>
+          {[{
+            name: "Dunk Rank",
+            link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
+            description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
+          },
+          {
+            name: "Quote Cook",
+            link: "https://apps.apple.com/us/app/quote-cook/id6447148619",
+            description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
+          },
+          {
+            name: "515",
+            link: "https://515game.netlify.app/",
+            description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
+          },].map((item) => (
+            <div
+              className="h-96 flex flex-row items-center justify-center"
+              style={{
+                minWidth: 350
+              }}
+            >
+              <Image
+                src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
+                width={175}
+                height={500}
+                alt={item.name}
+                className='px-3'
+              />
+              <div className='flex flex-col justify-center h-full'>
+                <p className="text-gray-200 text-3xl font-sans text-left font-medium">{item.name}</p>
+                <p className="text-gray-200 text-lg font-sans text-left w-40">{item.description}</p>
+                <a className="text-slate-300 text-xl font-sans text-left py-2" href={item.link} target="_blank"><u>Go to it</u> &#10132;</a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-slate-950 flex flex-col h-fit">
+        <h1 className="text-gray-100 text-4xl font-sans text-center p-5">My Skills</h1>
+        <div className="w-full flex flex-wrap flex-row justify-center">
+          {/* add java */}
+          {['html', 'css', 'js', 'node', 'react', 'git', 'postgresql', 'python', 'java', 'firebase', 'photoshop', 'xd', 'illustrater'].map((item) => (
+            <div className='m-5' style={{borderRadius: '17px', overflow: 'hidden'}}>
+              <Image
+                src={`/skills/${item}.jpg`}
+                width={110}
+                height={110}
+                alt={item}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div id="contact" className="w-full bg-slate-950 h-1/6 flex flex-row justify-evenly items-end">
+        <p className='text-slate-200 text-xl font-sans'>Github: <a href="https://github.com/AndrewWladis/" target="blank" className='underline'>AndrewWladis</a></p>
+        <p className='text-slate-200 text-xl font-sans'>Email: <a href="mailto:email@andrewwladis@gmail.com" className='underline'>andrewwladis@gmail.com</a></p>
       </div>
     </main>
   )
