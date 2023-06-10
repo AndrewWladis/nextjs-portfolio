@@ -74,6 +74,7 @@ export default function Home() {
                 width={110}
                 height={110}
                 alt={item}
+                key={item}
               />
             </div>
           ))}
