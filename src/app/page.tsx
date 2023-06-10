@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="w-full bg-slate-950 scroll-smooth h-screen overflow-x-hidden ">
+    <main className="w-full bg-zinc-950 scroll-smooth h-screen overflow-x-hidden ">
       <nav className="w-full sticky top-0 flex items-center justify-evenly bg-zinc-900 h-fit">
         <a href="#projects">
           <p className="text-gray-100 text-2xl font-sans py-4">Projects</p>
@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
       </div>
-      <div id="projects" className="w-full h-4/6 bg-gradient-to-b from-slate-950 to-blue-950 flex flex-col" style={{ paddingTop: 60 }}>
+      <div id="projects" className="w-full h-4/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
         <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
         {/*
           use this if you ever use more overflow
@@ -49,7 +49,7 @@ export default function Home() {
             >
               <Image
                 src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
-                width={175}
+                width={180}
                 height={500}
                 alt={item.name}
                 className='px-3'
@@ -63,12 +63,12 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-slate-950 flex flex-col h-fit">
+      <div id="skills" className="w-full bg-gradient-to-b from-blue-950 to-zinc-950 flex flex-col h-fit">
         <h1 className="text-gray-100 text-4xl font-sans text-center p-5">My Skills</h1>
         <div className="w-full flex flex-wrap flex-row justify-center">
           {/* add java */}
           {['html', 'css', 'js', 'node', 'react', 'git', 'postgresql', 'python', 'java', 'firebase', 'photoshop', 'xd', 'illustrater'].map((item) => (
-            <div className='m-5' style={{borderRadius: '17px', overflow: 'hidden'}}>
+            <div className='m-5' style={{ borderRadius: '17px', overflow: 'hidden' }}>
               <Image
                 src={`/skills/${item}.jpg`}
                 width={110}
@@ -79,7 +79,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div id="contact" className="w-full bg-slate-950 h-1/6 flex flex-row justify-evenly items-end">
+      <div id="contact" className="w-full bg-zinc-950 h-1/6 flex flex-row justify-evenly items-end">
         <p className='text-slate-200 text-xl font-sans'>Github: <a href="https://github.com/AndrewWladis/" target="blank" className='underline'>AndrewWladis</a></p>
         <p className='text-slate-200 text-xl font-sans'>Email: <a href="mailto:email@andrewwladis@gmail.com" className='underline'>andrewwladis@gmail.com</a></p>
       </div>
