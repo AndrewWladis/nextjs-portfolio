@@ -37,6 +37,11 @@ export default function Home() {
             description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
           },
           {
+            name: "CorrectBoxd",
+            link: "https://correct-boxd.netlify.app/",
+            description: "CorrectBoxd is a movie rating and ranking site that not only allows users to rank movies but also displays movie's rating from the site creator."
+          },
+          {
             name: "515",
             link: "https://515game.netlify.app/",
             description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
