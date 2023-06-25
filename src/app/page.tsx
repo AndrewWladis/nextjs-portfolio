@@ -72,7 +72,7 @@ export default function Home() {
         <h1 className="text-gray-100 text-4xl font-sans text-center p-5">My Skills</h1>
         <div className="w-full flex flex-wrap flex-row justify-center">
           {/* add java */}
-          {['html', 'css', 'js', 'ts',  'node', 'react', 'git', 'postgresql', 'python', 'java', 'firebase', 'photoshop', 'xd', 'illustrater'].map((item) => (
+          {['html', 'css', 'js', 'ts',  'node', 'react', 'git', 'postgresql', 'mongodb', 'python', 'java', 'firebase', 'photoshop', 'xd', 'illustrater'].map((item) => (
             <div className='m-5' style={{ borderRadius: '17px', overflow: 'hidden' }}>
               <Image
                 src={`/skills/${item}.jpg`}
