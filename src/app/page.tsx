@@ -1,7 +1,13 @@
 "use client";
+import { useState, useEffect } from 'react';
 import Image from 'next/image'
 
 export default function Home() {
+  const [width, setWidth] = useState(1000);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <main className="w-full bg-zinc-950 scroll-smooth h-screen overflow-x-hidden ">
       <nav className="w-full sticky top-0 flex items-center justify-evenly bg-zinc-900 h-fit">
@@ -21,10 +27,6 @@ export default function Home() {
       </div>
       <div id="projects" className="w-full h-5/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
         <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
-        {/*
-          use this if you ever use more overflow
-          <div className='flex flex-row overflow-x-scroll '>
-        */}
         <div className='flex flex-row overflow-x-scroll overflow-y-hidden min-[712px]:justify-evenly'>
           {[{
             name: "",
@@ -57,7 +59,7 @@ export default function Home() {
             description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
           },].map((item) => (
             <>
-            {(window.innerWidth < 730 && item.name === "") ? (
+            {(width < 730 && item.name === "") ? (
               null
             ) : (
               <div
