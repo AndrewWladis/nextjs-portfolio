@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
       </div>
-      <div id="projects" className="w-full h-4/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
+      <div id="projects" className="w-full h-5/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
         <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
         {/*
           use this if you ever use more overflow
@@ -27,9 +27,19 @@ export default function Home() {
         */}
         <div className='flex flex-row overflow-x-scroll overflow-y-hidden min-[712px]:justify-evenly'>
           {[{
+            name: "",
+            link: "",
+            description: ""
+          },
+          {
             name: "Dunk Rank",
             link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
             description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
+          },
+          {
+            name: "Beep Beep",
+            link: "https://web-temp-use.2023-summer-computer-vision.repl.co/",
+            description: "Beep Beep AI is a machine learning model that is designed to recognize traffic signals in real time, on the road."
           },
           {
             name: "Quote Cook",
@@ -46,25 +56,36 @@ export default function Home() {
             link: "https://515game.netlify.app/",
             description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
           },].map((item) => (
-            <div
+            <>
+            {(window.innerWidth < 730 && item.name === "") ? (
+              null
+            ) : (
+              <div
               className="h-96 flex flex-row items-center justify-center"
               style={{
                 minWidth: 350
               }}
+              key={item.name.replace(/\s/g, "").toLowerCase()}
             >
               <Image
                 src={`/${item.name.replace(/\s/g, "").toLowerCase()}.png`}
-                width={180}
-                height={500}
+                width={150}
+                height={417}
                 alt={item.name}
-                className='px-3'
+                style={{
+                  minWidth: 150,
+                  minHeight: 417
+                }}
+                className='pr-3 object-contain'
               />
               <div className='flex flex-col justify-center h-full'>
-                <p className="text-gray-200 text-3xl font-sans text-left font-medium">{item.name}</p>
-                <p className="text-gray-200 text-lg font-sans text-left w-40">{item.description}</p>
-                <a className="text-slate-300 text-xl font-sans text-left py-2" href={item.link} target="_blank"><u>Go to it</u> &#10132;</a>
+                <p className="text-gray-200 text-2xl font-sans text-left font-medium">{item.name}</p>
+                <p className="text-gray-200 text-m font-sans text-left w-40">{item.description}</p>
+                <a className="text-slate-300 text-l font-sans text-left py-2" href={item.link} target="_blank"><u>Go to it</u> &#10132;</a>
               </div>
             </div>
+            )}
+            </>
           ))}
         </div>
       </div>
@@ -73,7 +94,7 @@ export default function Home() {
         <div className="w-full flex flex-wrap flex-row justify-center">
           {/* add java */}
           {['html', 'css', 'js', 'ts',  'node', 'react', 'git', 'postgresql', 'mongodb', 'python', 'java', 'firebase', 'photoshop', 'xd', 'illustrater'].map((item) => (
-            <div className='m-5' style={{ borderRadius: '17px', overflow: 'hidden' }}>
+            <div className='m-5 h-fit w-fit' style={{ borderRadius: '20px', overflow: 'hidden' }}>
               <Image
                 src={`/skills/${item}.jpg`}
                 width={110}
