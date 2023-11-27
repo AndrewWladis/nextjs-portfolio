@@ -27,12 +27,8 @@ export default function Home() {
       </div>
       <div id="projects" className="w-full h-5/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
         <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
-        <div className='flex flex-row overflow-x-scroll overflow-y-hidden min-[712px]:justify-evenly'>
-          {[{
-            name: "",
-            link: "",
-            description: ""
-          },
+        <div className='flex flex-row overflow-x-scroll overflow-y-hidden'>
+          {[
           {
             name: "Dunk Rank",
             link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
@@ -49,6 +45,11 @@ export default function Home() {
             description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
           },
           {
+            name: "AI GC",
+            link: "https://ai-gc.netlify.app/",
+            description: "Engage in a groupchat conversation with a diverse cast of fictional characters, brought to life through AI in AI GC."
+          },
+          {
             name: "CorrectBoxd",
             link: "https://correct-boxd.netlify.app/",
             description: "CorrectBoxd is a movie rating and ranking site that not only allows users to rank movies but also displays movie's rating from the site creator."
@@ -57,7 +58,7 @@ export default function Home() {
             name: "515",
             link: "https://515game.netlify.app/",
             description: "515 is a Breaking Bad-themed clone of 2048, where players combine elements blocks to create an empire."
-          },].map((item) => (
+          }].map((item) => (
             <>
             {(width < 730 && item.name === "") ? (
               null
