@@ -35,19 +35,24 @@ export default function Home() {
             description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
           },
           {
-            name: "Beep Beep",
-            link: "https://web-temp-use.2023-summer-computer-vision.repl.co/",
-            description: "Beep Beep AI is a machine learning model that is designed to recognize traffic signals in real time, on the road."
-          },
-          {
             name: "Quote Cook",
             link: "https://apps.apple.com/us/app/quote-cook/id6447148619",
             description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
           },
           {
+            name: "Beep Beep",
+            link: "https://web-temp-use.2023-summer-computer-vision.repl.co/",
+            description: "Beep Beep AI is a machine learning model that is designed to recognize traffic signals in real time, on the road."
+          },
+          {
             name: "AI GC",
             link: "https://ai-gc.netlify.app/",
             description: "Engage in a groupchat conversation with a diverse cast of fictional characters, brought to life through AI in AI GC."
+          },
+          {
+            name: "EKSE",
+            link: "https://apps.apple.com/us/app/ekse/id6450754813",
+            description: "Challenge your skills, reflexes, and endurance in this addictive arcade adventure: EKSE."
           },
           {
             name: "CorrectBoxd",
