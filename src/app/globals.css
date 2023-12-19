@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px white; }
+  50% { box-shadow: 0 0 20px white; }
+  100% { box-shadow: 0 0 10px white; }
+}
 
 html {
   scroll-behavior: smooth;
   background-color: #020617;
 }
+
+.shadow-white-glow {
+  box-shadow: 0 0 10px white;
+  animation: pulse 4s infinite;
+}
+

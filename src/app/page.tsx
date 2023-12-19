@@ -2,15 +2,28 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { BsGithub, BsEnvelope } from "react-icons/bs";
+import { useMediaQuery } from 'react-responsive';
 
 export default function Home() {
   const [width, setWidth] = useState(1000);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+
+  const handleMouseMove = (event: MouseEvent) => {
+    setMousePosition({ x: event.clientX, y: event.clientY });
+  };
+
   useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
     setWidth(window.innerWidth);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   return (
-    <main className="w-full bg-zinc-950 scroll-smooth h-screen overflow-x-hidden ">
+    <main className="w-full bg-zinc-950 scroll-smooth h-screen">
       <nav className="w-full sticky top-0 flex items-center justify-evenly bg-zinc-900 h-fit">
         <a href="#projects">
           <p className="text-gray-100 text-2xl font-sans py-4">Projects</p>
@@ -25,6 +38,15 @@ export default function Home() {
       <div className="w-full flex items-center justify-center flex-col h-5/6">
         <h1 className="text-gray-100 text-5xl font-sans font-semibold">Andrew Wladis</h1>
         <h2 className="text-gray-100 text-4xl font-sans">Software Developer</h2>
+        {isDesktop ? <div
+          className="bg-white bg-opacity-40 absolute rounded-xl shadow-white-glow"
+          style={{
+            width: '20px',
+            height: '20px',
+            top: mousePosition.y + 'px',
+            left: mousePosition.x + 'px',
+          }}
+        ></div> : null}
       </div>
       <div id="projects" className="w-full h-5/6 bg-gradient-to-b from-zinc-950 to-blue-950 flex flex-col" style={{ paddingTop: 70 }}>
         <h1 className="text-gray-100 text-3xl font-sans text-center">Some of my more recent projects...</h1>
@@ -115,8 +137,8 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div id="contact" className="w-full bg-zinc-950 h-1/6 flex flex-col pt-6">
-        <h1 className="text-gray-100 text-4xl font-sans text-center p-2">Contact</h1>
+      <div id="contact" className="w-full bg-zinc-950 h-1/6 flex flex-col pt-2">
+        <h1 className="text-gray-100 text-4xl font-sans text-center">Contact</h1>
         <div className="w-full bg-zinc-950 flex flex-row justify-center items-end">
           <a href="https://github.com/AndrewWladis/" className='p-4' target="blank">
             <BsGithub color='white' size={50} />
