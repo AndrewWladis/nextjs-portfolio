@@ -53,6 +53,11 @@ export default function Home() {
         <div className='flex flex-row overflow-x-scroll overflow-y-hidden'>
           {[
             {
+              name: "Music Box'd",
+              link: "https://apps.apple.com/app/id6476071299",
+              description: "Discover and share your favorite albums with Music Boxd!"
+            },
+            {
               name: "Dunk Rank",
               link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
               description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
@@ -61,11 +66,6 @@ export default function Home() {
               name: "Quote Cook",
               link: "https://apps.apple.com/us/app/quote-cook/id6447148619",
               description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
-            },
-            {
-              name: "Beep Beep",
-              link: "https://web-temp-use.2023-summer-computer-vision.repl.co/",
-              description: "Beep Beep AI is a machine learning model that is designed to recognize traffic signals in real time, on the road."
             },
             {
               name: "AI GC",
