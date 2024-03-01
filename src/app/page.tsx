@@ -68,9 +68,9 @@ export default function Home() {
               description: "In this competitive daily unofficial Breaking Bad game you can compete in daily quote trivia and share your results with your friends."
             },
             {
-              name: "AI GC",
-              link: "https://ai-gc.netlify.app/",
-              description: "Engage in a groupchat conversation with a diverse cast of fictional characters, brought to life through AI in AI GC."
+              name: "Color Cascades",
+              link: "https://apps.apple.com/us/app/color-cascades/id6478559844",
+              description: "This puzzle game challenges you to strategically match groups of three adjacent cells on the board."
             },
             {
               name: "EKSE",
