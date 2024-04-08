@@ -58,6 +58,11 @@ export default function Home() {
               description: "Discover and share your favorite albums with Music Boxd!"
             },
             {
+              name: "Swiftie Swipe",
+              link: "https://apps.apple.com/us/app/swiftie-swipe/id6479224086",
+              description: "The ultimate unoffical daily Swiftie challenge game!"
+            },
+            {
               name: "Dunk Rank",
               link: "https://apps.apple.com/us/app/dunk-rank/id6448699695",
               description: "Dunk Rank is the premiere app for ranking you and your friends based off basketball 1v1 scores."
